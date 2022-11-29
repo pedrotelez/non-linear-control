@@ -1,5 +1,6 @@
 #%% [Markdown] 
 # Van der Pol Oscillator
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
@@ -35,8 +36,14 @@ plt.ylabel('y')
 plt.grid()
 plt.title('Van der Pol Oscillator')
 plt.legend()
-plt.show()
 
+# create the images folder if it does not exist
+if not os.path.exists('images/vanderpol'):
+    os.makedirs('images/vanderpol')
+
+# save the plot as a png file
+plt.savefig('images/vanderpol/vanderpol.png')
+print(f'>> Image saved in images/vanderpol folder')
 
 #%% [Markdown]
 # Non-minimum phase system
